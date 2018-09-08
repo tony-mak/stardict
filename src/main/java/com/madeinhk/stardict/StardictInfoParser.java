@@ -43,16 +43,13 @@ public class StardictInfoParser {
     }
 
     public StardictInfo parse(File infoFile) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(infoFile));
-        StardictInfo info = new StardictInfo();
-        try {
+        try (BufferedReader reader = new BufferedReader(new FileReader(infoFile))) {
+            StardictInfo info = new StardictInfo();
             String line;
             while ((line = reader.readLine()) != null) {
                 processLine(line, info);
             }
-        } finally {
-            reader.close();
+            return info;
         }
-        return info;
     }
 }
