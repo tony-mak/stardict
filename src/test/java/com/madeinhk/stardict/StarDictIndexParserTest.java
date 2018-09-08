@@ -1,4 +1,4 @@
-package com.madeinhk.stardict.test;
+package com.madeinhk.stardict;
 
 import static org.junit.Assert.*;
 

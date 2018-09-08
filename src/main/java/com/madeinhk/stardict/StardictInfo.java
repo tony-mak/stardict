@@ -8,6 +8,6 @@ public class StardictInfo {
     public String mSameTypeSequence;
 
     public boolean hasSameTypeSequence() {
-        return mSameTypeSequence != null && mSameTypeSequence.length() > 0;
+        return mSameTypeSequence != null && !mSameTypeSequence.isEmpty();
     }
 }

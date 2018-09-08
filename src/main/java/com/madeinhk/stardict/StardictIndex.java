@@ -10,16 +10,14 @@ public class StardictIndex {
     private Map<Character, ArrayList<StarDictIndexEntry>> mMap;
 
     public StardictIndex() {
-        mMap = new HashMap<Character, ArrayList<StarDictIndexEntry>>();
+        mMap = new HashMap<>();
         for (char c = 'a'; c <= 'z'; c++) {
-            mMap.put(c, new ArrayList<StarDictIndexEntry>());
+            mMap.put(c, new ArrayList<>());
         }
     }
 
     /**
      * Add one entry to the index Entries must be added in sorted order
-     * 
-     * @param item
      */
     public void addToIndex(String word, int offset, int length) {
         word = word.toLowerCase();
@@ -48,15 +46,14 @@ public class StardictIndex {
             Comparable<StarDictIndexEntry> {
 
         public StarDictIndexEntry(String word, int offset, int length) {
-            super();
             this.mWord = word;
             this.mOffset = offset;
             this.mLength = length;
         }
 
-        public String mWord;
-        public int mOffset;
-        public int mLength;
+        public final String mWord;
+        public final int mOffset;
+        public final int mLength;
 
         @Override
         public int compareTo(StarDictIndexEntry o) {
